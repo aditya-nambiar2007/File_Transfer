@@ -3,6 +3,9 @@
 <input type="submit" value="UPLOAD" >
 <div>
 <?php 
+if (!file_exists("DIR/")) {
+    mkdir("DIR/", 0777, true);
+}
 $arr=scandir("DIR/");
 for( $i=2 ; $i < count($arr) ; $i++ ) {
 $x=$arr[$i];
